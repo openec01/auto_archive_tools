@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# make sure you assign the full path to the target folder to your FILES variable
+# assign the full path to the target folder to your FILES variable
 FILES=/home/your_user/auto_archive_scripts/bbchomepage/*.png
 
 for f in $FILES
