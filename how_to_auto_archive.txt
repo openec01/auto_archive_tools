@@ -1,0 +1,127 @@
+/**************
+*Dependencies
+*/
+OS:
+Ubuntu 16.04LTS or macOS(High Sierra)
+
+
+/**********
+Scripts
+********/
+auto_archive_normal.js
+auto_archive_Timeout.js
+auto_bbchomepageLanding.js
+auto_bbciplayer.js
+auto_bbcnews.js
+auto_script.sh
+png_to_pdf.sh
+
+
+/**********
+*Packages
+*/
+nodejs - v8.12.0
+npm - v6.4.1
+phantomjs - phantomjs-2.1.1-macosx
+webshot
+ImageMagick (enables conversionof png to pdf))
+
+
+/********************
+*Installing Packages
+*/
+
+
+/**************
+nodejs and npm
+**************/
+nodejs and npm on Ubuntu: https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
+nodejs and npm on macOS:
+Go to https://nodejs.org/en/download
+Download version 8.12.0(includes npm 6.4.1)
+Latest version as of 11/09/2018 was version 10.10.0(includes npm 6.4.1)
+version 8.12.0 is Recommended for Most Users
+
+Select the downloaded package
+Follow the steps
+This alllows you install node globally on your system
+
+To check installation
+On Mac use the spotlight feature CMD + spacebar and type Terminal
+Type the following which should output the versions you've just installed
+node -v // node version
+npm -v // npm version
+
+npm is the node package manager which ships with node
+It allows the installation of modules and packages for node
+A module is a container of code relevant to a specific node function.
+
+
+/**************
+phantomjs
+**************/
+https://www.vultr.com/docs/how-to-install-phantomjs-on-ubuntu-16-04
+
+
+/***********
+ImageMagick
+***********/
+https://help.1and1.co.uk/hosting-c40985/webspace-and-access-c65754/ssh-c41029/install-imagemagick-via-ssh-a782057.html#
+
+/***********************
+install webshot with npm
+***********************/
+npm i webshot
+
+https://www.npmjs.com/package/webshot
+
+
+/**********************
+Setup target directories
+**********************/
+mkdir home/your_home_user/auto_archive_scripts/bbchomepageLanding
+mkdir home/your_home_user/auto_archive_scripts/bbchomepage_noTimeout
+mkdir home/your_home_user/auto_archive_scripts/bbchomepage_Timeout
+mkdir home/your_home_user/auto_archive_scripts/bbcnews
+mkdir home/your_home_user/auto_archive_scripts/iplayer
+
+
+/***************
+Setup crontab -e
+***************/
+* */1 * * * /home/chukwuma/auto_archive_scripts/auto_script.sh
+* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk.png /home/chukwuma/auto_archive_scripts/bbchomepageLanding
+* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk_noTimeout.png /home/chukwuma/auto_archive_scripts/bbchomepage_noTimeout
+* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk_Timeout.png /home/chukwuma/auto_archive_scripts/bbchomepage_Timeout
+* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbcnews.png /home/chukwuma/auto_archive_scripts/bbcnews
+* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ iplayer.png /home/chukwuma/auto_archive_scripts/iplayer
+* */1 * * * /home/chukwuma/auto_archive_scripts/png_to_pdf.sh
+
+
+jobs run every hour
+first job runs all the node and phantomjs scripts that do the screen capture every hour
+the next 5 jobs move the png files to their respective folders
+the last job runs pdf_to_pnd.sh against each folder to convert png to pdf
+
+/****
+Note:
+*****/
+
+1) iplayer rendered and loaded full page with scroll capture with all assets included without issue
+2) issue encountered while loading bbc.co.uk and bbc.co.uk/news full webpage with scroll capture
+ - image assets did not fully load
+investigate if extending timeout duration using setTimeout function
+alters output - potential issue with domain
+
+
+/*****************
+Other Useful Links
+******************/
+
+Specifying a different useragent for webshot module (see .js files to see how this has been implemented - 
+current implementation works so no need to change anything except you want to experiment with different userAgents
+doubt this will affect loading of assets on webpages)) 
+https://developers.whatismybrowser.com/useragents/explore/
+
+Taking screenshots using JavaScript with chrome extensions
+https://developer.chrome.com/extensions/samples#search:
