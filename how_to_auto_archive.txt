@@ -89,13 +89,13 @@ mkdir home/your_home_user/auto_archive_scripts/iplayer
 /***************
 Setup crontab -e
 ***************/
-* */1 * * * /home/chukwuma/auto_archive_scripts/auto_script.sh
-* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk.png /home/chukwuma/auto_archive_scripts/bbchomepageLanding
-* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk_noTimeout.png /home/chukwuma/auto_archive_scripts/bbchomepage_noTimeout
-* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk_Timeout.png /home/chukwuma/auto_archive_scripts/bbchomepage_Timeout
-* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbcnews.png /home/chukwuma/auto_archive_scripts/bbcnews
-* */1 * * * mv /home/chukwuma/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ iplayer.png /home/chukwuma/auto_archive_scripts/iplayer
-* */1 * * * /home/chukwuma/auto_archive_scripts/png_to_pdf.sh
+* */1 * * * /home/your_user/auto_archive_scripts/auto_script.sh
+* */1 * * * mv /home/your_user/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk.png /home/your_user/auto_archive_scripts/bbchomepageLanding
+* */1 * * * mv /home/your_user *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk_noTimeout.png /home/your_user/auto_archive_scripts/bbchomepage_noTimeout
+* */1 * * * mv /home/your_user/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbccouk_Timeout.png /home/your_user/auto_archive_scripts/bbchomepage_Timeout
+* */1 * * * mv /home/your_user/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ bbcnews.png /home/your_user/auto_archive_scripts/bbcnews
+* */1 * * * mv /home/your_user/ *\ *\ *\ *\ *\:*\:*\ GMT*\ \(BST\)\ iplayer.png /home/your_user/auto_archive_scripts/iplayer
+* */1 * * * /home/your_user/auto_archive_scripts/png_to_pdf.sh
 
 
 jobs run every hour
