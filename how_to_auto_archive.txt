@@ -5,9 +5,9 @@ OS:
 Ubuntu 16.04LTS or macOS(High Sierra)
 
 
-/**********
-Scripts
-********/
+/******************
+Programs & Scripts
+******************/
 auto_archive_normal.js
 auto_archive_Timeout.js
 auto_bbchomepageLanding.js
