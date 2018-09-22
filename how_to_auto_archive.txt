@@ -60,6 +60,7 @@ A module is a container of code relevant to a specific node function.
 /**************
 phantomjs
 **************/
+http://phantomjs.org/download.html
 https://www.vultr.com/docs/how-to-install-phantomjs-on-ubuntu-16-04
 
 
@@ -69,7 +70,7 @@ ImageMagick
 https://help.1and1.co.uk/hosting-c40985/webspace-and-access-c65754/ssh-c41029/install-imagemagick-via-ssh-a782057.html#
 
 /***********************
-install webshot with npm
+Install webshot with npm
 ***********************/
 npm i webshot
 OR
@@ -99,19 +100,29 @@ Setup crontab -e
 
 
 jobs run every hour
-first job runs all the node and phantomjs scripts that do the screen capture every hour
+first job is a script that runs all the node and phantomjs programs that do the screen capture every hour
 the next 5 jobs move the png files to their respective folders
-the last job runs pdf_to_pnd.sh against each folder to convert png to pdf
+the last job runs png_to_pdf.sh against each folder to convert png to pdf
 
 /****
 Note:
 *****/
 
-1) iplayer rendered and loaded full page with scroll capture with all assets included without issue
-2) issue encountered while loading bbc.co.uk and bbc.co.uk/news full webpage with scroll capture
+1) bbc.co.uk/iplayer full page with scroll capture with all assets included loaded without issue
+2) bbc.co.uk/ landing page loaded without issue
+3) issue encountered while loading bbc.co.uk and bbc.co.uk/news full webpage with scroll capture
  - image assets did not fully load
 investigate if extending timeout duration using setTimeout function
 alters output - potential issue with domain
+
+Typically the following happens when you try to access a website
+request, response, load, render. 
+so this is likely a wider issue with 
+the phantomjs headless browser or the bbc.co.uk/ page 
+
+https://varvy.com/pagespeed/display.html
+
+
 
 
 /*****************
